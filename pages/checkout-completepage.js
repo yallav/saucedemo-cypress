@@ -12,10 +12,11 @@ class CheckoutCompletePage {
   }
 
   logout() {
-    cy.get('[data-test="back-to-products"]').should("be.visible");
-    cy.get('[name="Open Menu"]').should("be.visible");
-    cy.get('[name="Open Menu"]').click();
-    cy.get('[data-test="logout-sidebar-link"]').should("contain", "Logout");
+    cy.get('[data-test="back-to-products"]').should('be.visible');
+    cy.get('body').type('{upArrow}');
+    cy.xpath('//*[@id="react-burger-menu-btn"]').should('be.visible');
+    cy.xpath('//*[@id="react-burger-menu-btn"]').click();
+    cy.get('[data-test="logout-sidebar-link"]').should('contain', 'Logout');
     cy.get('[data-test="logout-sidebar-link"]').click();
   }
 }

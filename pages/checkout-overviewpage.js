@@ -12,7 +12,7 @@ class CheckoutOverviewPage {
     let lineItemPrice = 0;
 
     cy.xpath('//*[@data-test="inventory-item"]').should("have.length.gt", 0);
-    //cy.writeFile("./cypress/fixtures/sorted-line-items.json", "");
+    cy.writeFile('./cypress/fixtures/sorted-line-items.json', '');
 
     cy.xpath('//*[@data-test="inventory-item"]').then((elements) => {
       let numOfLineItems = elements.length;
@@ -44,12 +44,15 @@ class CheckoutOverviewPage {
       });
 
       cy.writeFile(
-        "./cypress/fixtures/sorted-line-items.json",
+        './cypress/fixtures/sorted-line-items.json',
         sortedListOfItems
       );
 
-      /*       expect(this.lineItems.length).toEqual(cartItems.length);
-      expect(this.lineItems).toEqual(cartItems); */
+      cy.fixture('sorted-product-items.json').then((products) => {
+        expect(products.length).to.equal(sortedListOfItems.length);
+        expect(JSON.stringify(products) === JSON.stringify(sortedListOfItems))
+          .to.be.true;
+      });
     });
   }
 
