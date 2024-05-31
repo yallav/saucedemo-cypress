@@ -10,6 +10,7 @@ This feature gives flow of order checkout scenarios
 Scenario: Checkout Scenario
 
 Given user launches Saucedemo application with "https://www.saucedemo.com/"
+
 When user enters "standard_user" as user name and "secret_sauce" as password and clicks login button
 
 And user adds two random items to cart
