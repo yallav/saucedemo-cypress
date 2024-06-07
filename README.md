@@ -1,6 +1,6 @@
 # SuaceDemo Test
 
-This folder consists of the Cypress Automation Test Script. Cucumber BDD framework is embedded to test the identified test scenario. Page Object Model (POM) and Singleton design patterns were used to fulfill the user navigation.
+This folder consists of the Cypress Automation Test Script. Cucumber BDD framework is embedded to test the identified test scenario. Page Object Model (POM), SOLID principles and Singleton design patterns were used to fulfill the user navigation.
 
 ## Test Case
 
